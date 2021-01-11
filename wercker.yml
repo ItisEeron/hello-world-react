@@ -36,8 +36,7 @@ build:
           echo "npm version $(npm -v) running"
 deploy:
     steps:
-        - hello-world-react:
-            cwd: build/
-            publish-url: $FTP_URL
-            username: $FTP_USERNAME
-            password: $FTP_PASSWORD
+        cwd: build/
+        publish-url: $FTP_URL
+        username: $FTP_USERNAME
+        password: $FTP_PASSWORD
