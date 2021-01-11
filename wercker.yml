@@ -35,8 +35,8 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
 deploy:
-    steps:
-        cwd: build/
-        publish-url: $FTP_URL
+  steps:
+    - duleorlovic/ftp-deploy:
+        destination: $FTP_URL
         username: $FTP_USERNAME
         password: $FTP_PASSWORD
