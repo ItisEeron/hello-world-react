@@ -34,14 +34,10 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-push-to-acr:
-  steps:
-    - internal/docker-push:
-        azure-client-id: $AZURE_CLIENT_ID
-        azure-client-secret: $AZURE_CLIENT_SECRET
-        azure-subscription-id: $AZURE_SUBSCRIPTION_ID
-        azure-tenant-id: $AZURE_TENANT_ID
-        azure-resource-group: $AZURE_RESOURCE_GROUP
-        azure-registry-name: $AZURE_REGISTRY_NAME
-        azure-login-server: $AZURE_LOGIN_SERVER
-        repository: hello-world-react
+deploy:
+    steps:
+        - wercker-labs/azure-ftp-deploy:
+            cwd: build/
+            publish-url: $FTP_URL
+            username: $FTP_USERNAME
+            password: $FTP_PASSWORD
