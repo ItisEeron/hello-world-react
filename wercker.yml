@@ -36,7 +36,7 @@ build:
           echo "npm version $(npm -v) running"
 deploy:
     steps:
-        - hello-world-react/azure-ftp-deploy:
+        - hello-world-react/azure-ftp-deploy.yml:
             cwd: build/
             publish-url: $FTP_URL
             username: $FTP_USERNAME
