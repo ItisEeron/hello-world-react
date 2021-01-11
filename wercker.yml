@@ -45,7 +45,7 @@ push-to-acr:
         azure-resource-group: $AZURE_RESOURCE_GROUP
         azure-registry-name: $AZURE_REGISTRY_NAME
         azure-login-server: $AZURE_LOGIN_SERVER
-        repository: your_repo_name
+        repository: hello-world-react
 
 ## deploy:
 ##    steps:
