@@ -36,7 +36,7 @@ build:
           echo "npm version $(npm -v) running"
 deploy:
   steps:
-    - duleorlovic/ftp-deploy:
+    - mannau/ftp-deploy:
         destination: $FTP_URL
         username: $FTP_USERNAME
         password: $FTP_PASSWORD
